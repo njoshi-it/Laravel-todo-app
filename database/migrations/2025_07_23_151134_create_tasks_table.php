@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        $table->id();
+        $table->string('title');
+        $table->boolean('is_done')->default(false);
+        $table->timestamps();
+    });
     }
 
     /**
